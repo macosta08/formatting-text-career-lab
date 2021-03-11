@@ -38,7 +38,8 @@ This      is a second paragraph with extraneous whitespace.`);
       const newWord =
         wordJoin + (wordJoin.endsWith(lineBreak) ? "" : " ") + currentWord;
 
-      if (newWord.endsWith(doubleLineBreak)) updateCharCount(newWord);
+      if (wordJoin.endsWith(doubleLineBreak)) updateCharCount(wordJoin);
+      if (currentWord.endsWith(doubleLineBreak)) charCount = charCount + 2;
 
       if (newWord.length > charCount) {
         updateCharCount(wordJoin + lineBreak);
